@@ -432,6 +432,7 @@ import html2canvas from 'html2canvas'
       photodownload(){
         this.loading=true
         const loading = this.$vs.loading()
+        //document.querySelector("meta[view-port]").removeAttribute("content")
          html2canvas(document.querySelector(".card-body"),{useCORS: true,logging:true}).then(canvas => {
             
             var link = document.createElement('a');
@@ -440,6 +441,7 @@ import html2canvas from 'html2canvas'
           link.click();
           this.loading = false
           loading.close()
+          //document.querySelector("meta[view-port]").setAttribute("content","initial-scale=1")
         });
       },
       formatter(num) {
