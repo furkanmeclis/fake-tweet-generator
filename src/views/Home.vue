@@ -432,7 +432,7 @@ import html2canvas from 'html2canvas'
       photodownload(){
         this.loading=true
         const loading = this.$vs.loading()
-        document.querySelector("meta[name=view-port]").setAttribute("content","width=device-width")
+        document.querySelector("meta[name=view-port]").remiveAttribute("content")
          html2canvas(document.querySelector(".card-body"),{useCORS: true,logging:true}).then(canvas => {
             
             var link = document.createElement('a');
